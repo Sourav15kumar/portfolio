@@ -41,30 +41,48 @@ ul li{
     display: inline-block;
     margin: 10px 20px;
     font-size: large;
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-ul li p{
+nav ul li p{
     margin-right: 70px;
 }
-ul li a{
+nav ul li a{
     text-decoration: none;
-    color: white;
+    color: rgb(222, 50, 50);
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform:capitalize;
     position: relative;
    
 }
  ul li a::after{
-    content:"";
+    content:'';
     width: 100%;
     background: brown;
     height: 3px;
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition:0.5s;
-}
- ul li a:hover::after {
-    width:100%;}
+   left: 0;
+    bottom: -3px;
+    /*transition: 0.7s;*/
     
+}
+
+/* --------------------------------  this is for line move from right aur left ex we take central move---------------------*/
+ /*ul li a:hover::after{
+    width: 100%;
+}*/
+ul li a:hover{
+    color: rgb(250, 250, 250);
+}
+ul li a::after{
+    transform: scale(0,1);
+    transition: transform 0.7s ease;
+}
+ul li a:hover::after{
+    transform: scale(1,1);
+}  
 .headertext{
     color: white;
     margin-top: 15%;
@@ -116,30 +134,39 @@ ul li a{
     display: inline-block;
     margin-bottom: 5px;
     position:relative;
-    color: red;
+    color: rgb(0, 220, 224);
 }
 .about2 h1::before{
     content:"";
-    width: 100%;
-    background: rgb(46, 165, 42);
-    height: 4px;
+    width: 0%;
+    background: rgb(223, 19, 19);
+    height: 6px;
     position: absolute;
     left: 0;
     bottom: -2px;
     transition:0.5s;
 }
+.about2 h1:hover::before{
+    width: 100%;
+}
 
 .about2 h1::after{
     content:"";
-    width: 50%;
-    background: rgb(46, 165, 42);
-    height: 4px;
+    width: 0%;
+    background: rgb(223, 19, 19);
+    height: 6px;
     position: absolute;
     left: 0;
-    bottom: 55px;
-    transition:0.5s;
+    top: -2px;
+    transition:0.5s;  
+}
+.about2 h1:hover::after{
+
+    width: 50%;
 
 }
+
+
 .about2 h2 {
     font-size: 40px;
     color: rgb(42, 85, 165);
@@ -197,54 +224,88 @@ ul li a{
     border-color: rgb(19, 19, 152);
     background-color: rgb(164, 199, 229);
 }
-@media(max-width:968px){
-    .personalinfo{
-        grid-template-columns: 1fr;
-    }
+
     
-}
-.myskil{
+
+.myskill{
     height: 100%;
     width: 100%;
+   
 }
 .myskill h1{
     text-transform: uppercase;
    font-size: 50px;
    text-align: center;
+   
+
+ 
 }
+
+
 .myskill h1 span{
-    color: rgb(29, 207, 210);
+    color: aqua;
+   
+    
 }
+/*.skilltext{
+    padding: 15px;
+    border-color: rgb(162, 103, 25) ;
+       
+}*/
+  
+
 .myskill h3{
     margin: 10px;
 }
 .skillcontent{
-    width: 700px;
-    background-color: rgb(68, 72, 75);
+    width: 600px;
+    background-color: rgb(67, 69, 70);
     margin: 60px auto;
     color: rgb(228, 0, 0);
     padding: 50px;
-    box-shadow: 0 14px 28px rgb(255, 254, 254),0 10px 10px rgb(221, 51, 51);
-
+    box-shadow: 0 14px 28px rgb(118, 117, 117),0 10px 10px rgb(221, 51, 51);
+  
 }
 .myskill p{
 
     /*padding:10px;*/
 }
 .skillcontent span{
-    background-color: rgb(239, 219, 219);
+    background-color: rgb(255, 255, 255);
     width: 100%;
 
 }
-#html{
-    width: 85%;
-    background-color: rgb(19, 203, 228);
-    animation: html 3s;
+
+.bar{
+    background-color: rgb(0, 0, 0);
+    display: block;
+    height: 20px;
+    border:2px solid rgb(9, 9, 11);
+    border-radius: 10px;
+    overflow: hidden;
+   box-shadow:rgb(228, 103, 103) ;
+     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 }
+.bar:hover{
+    box-shadow:o 14px 28px rgba(0, 0, 0, 0.25),0 10px 10px rgb(0, 0, 0.22);
+}
+.bar span{
+    height: 20px;
+    float: left;
+    background: linear-gradient(135deg,rgb(190, 39, 130))0%,rgba(252,105,110,1)100%;
+}
+
+ 
+#html{
+    width:85%;
+    background-color: rgb(19, 203, 228);
+}
+
 #css{
     width: 80%;
     background-color: rgb(19, 203, 228);
-    animation: html 3s;
+    animation: css 3s;
 
 }
 #javascript{
@@ -258,25 +319,6 @@ ul li a{
     animation: html 3s;
 }
 
-.bar{
-    background-color: rgb(11, 11, 11);
-    display: block;
-    height: 20px;
-    border:1px solid rgb(135, 136, 146);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow:dimgray ;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-}
-.barspan:hover{
-    box-shadow:o 14px 28px rgba(0, 0, 0, 0.25),0 10px 10px rgb(0, 0, 0.22);
-}
-.bar span{
-    height: 20px;
-    float: left;
-    background: linear-gradient(135deg,rgba(236,0,140,1))0%,rgba(252,105,110,1)100%;
-}
 
 
 
@@ -368,6 +410,7 @@ ul li a{
 }
 .box2 B{
     margin-top: 10px;
+    font-size: 40px;
 }
   .box2 span{
       margin:0px;
@@ -381,7 +424,6 @@ ul li a{
   }
 .box3{
     margin-right: 5%;
-    
     height:500px;
     width: 25%;
     background-color: rgb(25, 150, 150);
@@ -400,7 +442,8 @@ ul li a{
     background-color: rgb(133, 181, 221);
 }
 .box3 B{
-    margin-top: 20PX;
+    margin-top: 10PX;
+    font-size: 40px;
   }
   .box3 a{
       margin: 20PX;
@@ -501,51 +544,204 @@ ul li a{
     
     background-color: rgb(140, 198, 237);
   }
+.nameright{
+    font-size: larger;
+    padding: 10px;
+    text-align: center;
+    background-color: #000;
+}
 
 
 
 
 
-  @media (max-width:991px){
+@media only screen and (max-width: 358px)
 
-    html{
-        font-size: 55%;
+{
+    #main{
+       
+        background-image:url(mobile\ background\ \(1\).jpg);
+        background-color: black;
+
     }
+
+    nav {
+        flex-direction: column;
+        padding: 5%;
+        
     
-    body{
-        padding: 0;
     }
 
-
-    #menu-bars{
-        display: initial;
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+        
     }
 
-    header{
-        left:-120%;
+    nav ul li {
+        font-size: 5px;
+        margin-bottom: 10px;
+       
+    }
+    .headertext{
+        margin-left: 5px;
+       font-size: 35px;
+
     }
 
-    header.active{
-        left:0%;
+    .headertext h1 {
+        font-size:45px;
+        
+    }
+
+    .headertext p {
+        font-size: 50px;
     }
 }
 
-@media (max-width:480px){
-
-    html{
-        font-size: 50%;
+@media only screen and (max-width: 358px) {
+    #about {
+        padding: 20px;
     }
 
-    header{
-        width:70%;
+    .boxsection {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .project .box-container .box{
-        padding-right: 0px;
-        font-size:50% ;
+    .about1,
+    .about2 {
+        flex-basis: 100%;
+        text-align: center;
     }
-iframe{
-    height: 200px;
-    width: 340px;
+
+    .about1 img {
+        height: auto;
+        width: 100%;
+    }
+
+    .about2 h1 {
+        font-size: 30px;
+    }
+
+    .about2 h2 {
+        font-size: 25px;
+    }
+
+    .about2 p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .personalinfo {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .about2 button {
+        padding: 10px 15px;
+        max-width: 100%;
+        font-size: 12px;
+    }
 }
+
+@media only screen and (max-width: 358px){
+    .myskill h1 {
+        font-size: 30px;
+    }
+
+    .skillcontent {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+} 
+
+@media only screen and (max-width: 358px) {
+    .myproject {
+        font-size: large;
+        margin-left: 0;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .myproject a {
+        font-size: large;
+    }
+
+    .myproject b {
+        font-size: 30px;
+    }
+
+    .projectbox {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #box1, .box2, .box3 {
+        width: 90%;
+        height: auto;
+        margin: 15px 0;
+    }
+
+    #box1 b, .box2 b, .box3 b {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .box3 img{
+        height:130px;
+    }
+
+    #box1 p, .box2 p, .box3 p {
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 358px) {
+    .contactus {
+        padding: 40px 20px;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+    .contactbox{
+        flex-direction: column;
+    }
+
+    .contactbox .input {
+        margin: 20px;
+    }
+
+    .contactbox .input .box {
+        font-size: 20px;
+    }
+
+    .contactdetails {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contactdetails h2 {
+        font-size: 24px;
+    }
+
+    .contactdetails .inputbox input,
+    .contactdetails .inputbox textarea {
+        font-size: 14px;
+    }
+
+    .contactdetails .submitbutton input {
+        font-size: medium;
+        padding: 8px 16px;
+    }
+
+    .nameright {
+        
+        font-size: medium;
+    }
 }
